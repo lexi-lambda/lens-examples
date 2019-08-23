@@ -1,0 +1,80 @@
+name: lens-examples
+version: '0.0.0'
+category: Other
+synopsis: A new package.
+description: lens-examples is a new package.
+maintainer: Author name here
+
+extra-source-files:
+- package.yaml
+- stack.yaml
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wredundant-constraints
+- -fdefer-typed-holes
+
+default-extensions:
+- ApplicativeDo
+- BangPatterns
+- ConstraintKinds
+- DataKinds
+- DefaultSignatures
+- DeriveDataTypeable
+- DeriveFoldable
+- DeriveFunctor
+- DeriveGeneric
+- DeriveLift
+- DeriveTraversable
+- DerivingStrategies
+- DerivingStrategies
+- DerivingVia
+- EmptyCase
+- ExistentialQuantification
+- FlexibleContexts
+- FlexibleInstances
+- FunctionalDependencies
+- GADTs
+- GeneralizedNewtypeDeriving
+- InstanceSigs
+- KindSignatures
+- LambdaCase
+- MultiParamTypeClasses
+- MultiWayIf
+- NamedFieldPuns
+- OverloadedStrings
+- PatternSynonyms
+- RankNTypes
+- ScopedTypeVariables
+- StandaloneDeriving
+- TemplateHaskell
+- TupleSections
+- TypeApplications
+- TypeFamilies
+- TypeFamilyDependencies
+- TypeOperators
+- ViewPatterns
+
+dependencies:
+- base >= 4.10 && < 5
+- lens
+- text
+
+library:
+  dependencies: []
+  # source-dirs: src
+
+tests:
+  lens-examples-test-suite:
+    dependencies:
+    - lens-examples
+    - hspec
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+    main: Main.hs
+    source-dirs: test
